@@ -34,10 +34,11 @@ int main() {
                 score = readScore();
                 head = add(head, name, ID, score);
                 printf("\n\t\t  Done!\n");
-                printf("\n\t\t  Added student with ID %d successfully!\n", ID);
+                printf("\t\t  Added student with ID %d successfully!\n", ID);
                 printf("\t\t  Press Enter to continue...");
                 fflush(stdin);
                 getchar();
+                while(getchar() != '\n');
                 printf("\n");
                 break;
             case 2:
@@ -54,6 +55,7 @@ int main() {
                 printf("\t\t  Press Enter to continue...");
                 fflush(stdin);
                 getchar();
+                while(getchar() != '\n');
                 break;
             case 3:
                 printf("\t\t  Enter student's ID you want to delete: ");
@@ -69,6 +71,7 @@ int main() {
                 printf("\t\t  Press Enter to continue...");
                 fflush(stdin);
                 getchar();
+                while(getchar() != '\n');
                 break;
             case 4:
             default: break;
