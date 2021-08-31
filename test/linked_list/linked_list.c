@@ -96,25 +96,26 @@ Student *del(Student *head, uint16_t ID) {
 void display(Student *head) {
     Student *temp = head;
 
-    printf("\t\t\t\t+------+--------------------------+-------+\n");
-    printf("\t\t\t\t| %-5s| %-25s| %-5s |\n", "ID", "Student's name", "Score");
-    printf("\t\t\t\t+------+--------------------------+-------+\n");
+    printf("\t\t+------+--------------------------+-------+\n");
+    printf("\t\t| %-5s| %-25s| %-5s |\n", "ID", "Student's name", "Score");
+    printf("\t\t+------+--------------------------+-------+\n");
     while (temp != NULL) {
-        printf("\t\t\t\t| %-5d| %-25s| %-5d |\n", temp->ID, temp->name, temp->score);
+        printf("\t\t| %-5d| %-25s| %-5d |\n", temp->ID, temp->name, temp->score);
         temp = temp->next;
     }
-    printf("\t\t\t\t+------+--------------------------+-------+\n\n");
+    printf("\t\t+------+--------------------------+-------+\n\n");
 }
 
 void showMenu(void) {
-    printf("\t\t\t\t+----------------------------------+\n");
-    printf("\t\t\t\t|    Student management program    |\n");
-    printf("\t\t\t\t+---+------------------------------+\n");
-    printf("\t\t\t\t| 1 | Add student                  |\n");
-    printf("\t\t\t\t| 2 | Find student by ID           |\n");
-    printf("\t\t\t\t| 3 | Delete student by ID         |\n");
-    printf("\t\t\t\t| 4 | Exit                         |\n");
-    printf("\t\t\t\t+---+------------------------------+\n\n");
+    printf("\t===========================================================\n\n");
+    printf("\t\t    +----------------------------------+\n");
+    printf("\t\t    |    Student management program    |\n");
+    printf("\t\t    +---+------------------------------+\n");
+    printf("\t\t    | 1 | Add student                  |\n");
+    printf("\t\t    | 2 | Find student by ID           |\n");
+    printf("\t\t    | 3 | Delete student by ID         |\n");
+    printf("\t\t    | 4 | Exit                         |\n");
+    printf("\t\t    +---+------------------------------+\n\n");
 }
 
 Student *init(void) {
@@ -132,12 +133,12 @@ uint16_t readID(Student *head) {
     uint16_t ID;
     Student *isExist;
 
-    printf("\t\t\t\t  Enter student's ID: ");
+    printf("\n\t\t  Enter student's ID: ");
     do {
         do {
             scanf("%d", &ID);
             if((ID < 0) || (ID > 999)) {
-                printf("\t\t\t\t  ID must be between 0 and 999!\n\t\t\t\t  Enter again: ");
+                printf("\t\t  [ ERROR ] ID must be between 0 and 999!\n\t\t  Enter again: ");
             }
             else {
                 /* Do nothing */
@@ -146,7 +147,7 @@ uint16_t readID(Student *head) {
 
         isExist = findID(head, ID);
         if(isExist) {
-            printf("\t\t\t\t  ID %d is already exists!\n\t\t\t\t  Enter again: ", ID);
+            printf("\t\t  [ ERROR ] ID %d is already exists!\n\t\t  Enter again: ", ID);
         }
         else {
             /* Do nothing */
@@ -159,11 +160,11 @@ uint16_t readID(Student *head) {
 uint8_t readScore(void) {
     static uint8_t score;
 
-    printf("\t\t\t\t  Enter student's score: ");
+    printf("\t\t  Enter student's score: ");
     do {
         scanf("%d", &score);
         if((score < 0) || (score > 10)) {
-            printf("\t\t\t\t  Score must be between 0 and 10!\n\t\t\t\t  Enter again: ");
+            printf("\t\t  [ ERROR ] Score must be between 0 and 10!\n\t\t\t\t  Enter again: ");
         }
         else {
             /* Do nothing */

@@ -6,10 +6,8 @@
 #include <stdint.h>
 
 int main() {
-    int a = 15;
-    if(a = 15 ^ (a > 8)) a += 5;
-    else a -= 5;
-    printf("%d\n", a);
+    float f = 9.0f;
+    printf("f = %f\n", f);
 }
 
 // typedef struct NODE {
