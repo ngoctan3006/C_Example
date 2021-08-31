@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1630338237 source:d:\code\c_c++\c\test\test1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	"linked_list.h"
+
+1630337432 source:d:\code\c_c++\c\test\test1\function.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	"linked_list.h"
+
+1630337405 d:\code\c_c++\c\test\test1\function.h
+
+1630301557 source:d:\code\c_c++\c\test\test1\test.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+
+1630338126 d:\code\c_c++\c\test\test1\linked_list.h
+
+1630338149 source:d:\code\c_c++\c\test\test1\linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	"linked_list.h"
+

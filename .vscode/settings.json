@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "float.h": "c",
+        "stdbool.h": "c",
+        "stdlib.h": "c",
+        "crtdefs.h": "c",
+        "stdio.h": "c",
+        "string.h": "c",
+        "stdint.h": "c",
+        "function.h": "c"
+    }
+}
