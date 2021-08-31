@@ -6,14 +6,10 @@
 #include <stdint.h>
 
 int main() {
-    uint8_t name[20];
-    uint16_t ID;
-    // gets(name);
-    scanf("%[^\n]s", name);
-    printf("%s\n", name);
-    uint8_t str[20];
-    strcpy(str, name);
-    printf("%s\n", str);
+    int a = 15;
+    if(a = 15 ^ (a > 8)) a += 5;
+    else a -= 5;
+    printf("%d\n", a);
 }
 
 // typedef struct NODE {

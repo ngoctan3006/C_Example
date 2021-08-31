@@ -5,37 +5,38 @@
 #include "linked_list.h"
 
 int main() {
-    uint8_t name[MAX];
-    uint16_t ID;
-    uint8_t score;
-    uint8_t choice;
+    static uint8_t name[MAX];
+    static uint16_t ID;
+    static uint8_t score;
+    static int16_t choice;
     Student *head = init();
     Student *temp = NULL;
-    display(head);
-    showMenu();
 
     do {
-        printf("Enter your choice: ");
+        display(head);
+        showMenu();
+
+        printf("\t\t\t\tEnter your choice: ");
         do {
             scanf("%d", &choice);
-            if(( choice < 1) ||( choice > 5)) {
-                printf("Choosen must be between 1 and 5! Enter again: ");
+            if(( choice < 1) ||( choice > 4)) {
+                printf("\t\t\t\t  Choosen must be between 1 and 4!\n");
+                printf("\t\t\t\t  Enter again: ");
             }
-        } while(( choice < 1) ||( choice > 5));
+        } while(( choice < 1) ||( choice > 4));
 
         switch(choice) {
             case 1:
                 ID = readID(head);
-                printf("Enter student's name: ");
+                printf("\t\t\t\t  Enter student's name: ");
                 fflush(stdin);
                 scanf("%[^\n]s", name);
                 score = readScore();
-
                 head = add(head, name, ID, score);
                 printf("\n");
                 break;
             case 2:
-                printf("Enter student's ID you want to find: ");
+                printf("\t\t\t\t  Enter student's ID you want to find: ");
                 scanf("%d", &ID);
                 temp = findID(head, ID);
                 if(temp) {
@@ -47,7 +48,7 @@ int main() {
                 }
                 break;
             case 3:
-                printf("Enter student's ID you want to delete: ");
+                printf("\t\t\t\t  Enter student's ID you want to delete: ");
                 scanf("%d", &ID);
                 if(findID(head, ID)) {
                     head = del(head, ID);
@@ -58,11 +59,9 @@ int main() {
                 }
                 break;
             case 4:
-                display(head);
-                break;
-            case 5: break;
+            default: break;
         }
-    } while(choice != 5);
+    } while(choice != 4);
 
     return 0;
 }
