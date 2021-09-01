@@ -2,4 +2,8 @@ bin/
 obj/
 linked_list.cbp
 linked_list.depend
+<<<<<<< HEAD
 linked_list.layout
+=======
+linked_list.layout
+>>>>>>> 0c26471890a3afe6cc00ba4ffcf7a8f483187eb7
