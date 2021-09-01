@@ -56,7 +56,6 @@ Student *addTail(Student *head, uint8_t *name, uint16_t ID, uint8_t score) {
         head = node;
     }
     else {
-        // node->next = head;
         Student *temp = head;
         while(temp->next != NULL) {
             temp = temp->next;
