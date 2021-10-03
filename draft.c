@@ -5,11 +5,6 @@
 #include <ctype.h>
 #include <stdint.h>
 
-int main() {
-    float f = 9.0f;
-    printf("f = %f\n", f);
-}
-
 // typedef struct NODE {
 //     int data;
 //     struct NODE *left;
@@ -304,50 +299,6 @@ double: %lf
 //     scanf("%d", &n);
 //     if(leHoanToan(n)) printf("%d la so le hoan toan\n", n);
 //     else printf("%d khong phai so le hoan toan\n", n);
-//     return 0;
-// }
-
-// int main() {
-//     char c = 0x41; // he co so 16
-//     char c = 65; // he co so 10
-//     char c = 0101; // he co so 8
-//     char c = 101; // he co so 10
-//     printf("c = %o", c);
-//     return 0;
-// }
-
-// int main() {
-//     printf("Lop luu tru cho so thuc (float) la: %d \n", sizeof(float));
-//     printf("Gia tri so thuc duong nho nhat la: %E\n", FLT_MIN );
-//     printf("Gia tri so thuc duong lon nhat la: %E\n", FLT_MAX );
-//     printf("Do chinh xac: %d\n", FLT_DIG );
-//     return 0;
-// }
-
-// int main() {
-//     unsigned char a = 128, b = 128;
-//     unsigned char c = a + b;
-//     printf("%d", c);
-//     return 0;
-// }
-
-// int main() {
-//     int a = 10, b = 3;
-//     float c;
-//     c = a/b; // khong ep kieu
-//     printf("c = %f\n", c);
-
-//     c = (float) a/b; // them (float)
-//     printf("c = %f\n", c);
-
-//     c = (double) a/b; // them (double)
-//     printf("c = %f\n", c);
-
-//     c = 1.0*a/b; // nhan them 1.0
-//     printf("c = %f\n", c);
-
-//     int s = sin(2);
-//     printf("sin(2) = %f\n", s);
 //     return 0;
 // }
 

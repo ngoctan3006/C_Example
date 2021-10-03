@@ -1,2 +1,7 @@
 BT/
 Slide/
+test/mock/mock.cbp
+test/mock/mock.layout
+*.exe
+*.o
+*.out
