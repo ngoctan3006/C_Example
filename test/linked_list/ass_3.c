@@ -4,7 +4,7 @@
 #include <string.h>
 #include "linked_list.h"
 
-int main() {
+int main_1() {
     static uint8_t name[MAX];
     static uint16_t ID;
     static uint8_t score;
