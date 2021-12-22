@@ -1,73 +1,50 @@
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <stdlib.h>
 #include <ctype.h>
-#include <stdint.h>
+#include <math.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// #include<GL/glut.h>
-#define pi 3.142857
- 
-// function to initialize
-// void myInit (void)
-// {
-//     // making background color black as first
-//     // 3 arguments all are 0.0
-//     glClearColor(0.0, 0.0, 0.0, 1.0);
-     
-//     // making picture color green (in RGB mode), as middle argument is 1.0
-//     glColor3f(0.0, 1.0, 0.0);
-     
-//     // breadth of picture boundary is 1 pixel
-//     glPointSize(1.0);
-//     glMatrixMode(GL_PROJECTION);
-//     glLoadIdentity();
-     
-//     // setting window dimension in X- and Y- direction
-//     gluOrtho2D(-780, 780, -420, 420);
-// }
- 
-// void display (void)
-// {
-//     glClear(GL_COLOR_BUFFER_BIT);
-//     glBegin(GL_POINTS);
-//     float x, y, i;
-     
-//     // iterate y up to 2*pi, i.e., 360 degree
-//     // with small increment in angle as
-//     // glVertex2i just draws a point on specified co-ordinate
-//     for ( i = 0; i < (2 * pi); i += 0.001)
-//     {
-//         // let 200 is radius of circle and as,
-//         // circle is defined as x=r*cos(i) and y=r*sin(i)
-//         x = 200 * cos(i);
-//         y = 200 * sin(i);
-         
-//         glVertex2i(x, y);
-//     }
-//     glEnd();
-//     glFlush();
-// }
- 
-int main (int argc, char** argv) {
-    int a, b;
-    printf("%d\n", scanf("%d%d", &a, &b));
-    // glutInit(&argc, argv);
-    // glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-     
-    // // giving window size in X- and Y- direction
-    // glutInitWindowSize(1366, 768);
-    // glutInitWindowPosition(0, 0);
-     
-    // // Giving name to window
-    // glutCreateWindow("Circle Drawing");
-    // myInit();
-     
-    // glutDisplayFunc(display);
-    // glutMainLoop();
+struct Student {
+    char id[10];
+    char name[100];
+    float math;
+    float physic;
+};
+
+uint8_t strToInt(uint8_t *str) {
+    uint32_t res = 0;
+    uint8_t len = strlen(str);
+    uint8_t temp;
+    for (uint8_t i = 0; i < len; i++) {
+        temp = str[i];
+        if (isdigit(temp))
+            temp -= '0';
+        else if (isalpha(temp)) {
+            temp = toupper(temp);
+            temp = temp - 'A' + 10;
+        } else
+            return 0xff;
+        res = res * 16 + temp;
+    }
+    return res;
+}
+
+int main(int argc, char** argv) {
+    int a[10];
+    for (int i = 0; i < 10; i++)
+        scanf("%d", &a[i]);
+    for (int i = 0; i < 10; i++)
+        printf("%d ", a[i]);
     return 0;
 }
+
+
+/**
+ * 0xff = 255 = 1111 1111 
+*/
+
 
 // typedef struct NODE {
 //     int data;
@@ -158,77 +135,77 @@ int main (int argc, char** argv) {
 //     *(charBuff + charCount*sizeof(char)) = '\0';
 //     *(digitBuff + digitCount*sizeof(char)) = '\0';
 //     printf("%s\n%s", charBuff, digitBuff);
-    // char s1[] = "DHBK";
-    // char s2[] = {'D', 'H', 'B', 'K'};
-    // printf("%x\n", s1);
-    // printf("%x\n", s2);
-    // printf("%d", strcmp(s1, s2));
-    // int a[5] = {1, 2};
-    // int b = 1;
-    // printf("%d", (int) sizeof(a));
-    // int j = 3, k = 2, p;
-    // float r = 2.0f, q = 7.2f, a;
-    // a = j/k;
-    // p = q/r;
-    // printf("%f\n%f", a, p);
-    // int i = 1;
-    // i <<= 7;
-    // i >>=7;
-    // printf("%d\n", i);
-    // double d = 1.28;
-    // printf("%x\n", d);
-    // char a = 154, b = 170;
-    // char c = a + b;
-    // printf("%d\n", c);
-    // int a, b, c;
-    // scanf("%d%d%d", &a, &b, &c);
-    // printf("a = %d\nb = %d\nc = %d\n", a, b, c);
-    // int s = 0;
-    // int a[3][4] = {{1, 3, 5}, {4, 5}, {2}};
-    // for(int i = 0; i < 3; i++) s += a[i][i];
-    // while (i>1) {
-    //     switch (i%3) {
-    //         case 1: i = i/2 + 1; break;
-    //         case 0: printf("%d ", i);
-    //         default: i -= 2; printf("%d ", i+1);
-    //     }
-    // }
-    // int s = 0;
-    // for(int i = 0; i < 10; i++) {
-    //     if(i%3) s += i;
-    //     else i += 3;
-    // }
-    // printf("%d\n", s);
-    // char s[10] = "hello";
-    // s = "hello";
-    // le   THI   cAm   lY   => Le Thi Cam Ly
+// char s1[] = "DHBK";
+// char s2[] = {'D', 'H', 'B', 'K'};
+// printf("%x\n", s1);
+// printf("%x\n", s2);
+// printf("%d", strcmp(s1, s2));
+// int a[5] = {1, 2};
+// int b = 1;
+// printf("%d", (int) sizeof(a));
+// int j = 3, k = 2, p;
+// float r = 2.0f, q = 7.2f, a;
+// a = j/k;
+// p = q/r;
+// printf("%f\n%f", a, p);
+// int i = 1;
+// i <<= 7;
+// i >>=7;
+// printf("%d\n", i);
+// double d = 1.28;
+// printf("%x\n", d);
+// char a = 154, b = 170;
+// char c = a + b;
+// printf("%d\n", c);
+// int a, b, c;
+// scanf("%d%d%d", &a, &b, &c);
+// printf("a = %d\nb = %d\nc = %d\n", a, b, c);
+// int s = 0;
+// int a[3][4] = {{1, 3, 5}, {4, 5}, {2}};
+// for(int i = 0; i < 3; i++) s += a[i][i];
+// while (i>1) {
+//     switch (i%3) {
+//         case 1: i = i/2 + 1; break;
+//         case 0: printf("%d ", i);
+//         default: i -= 2; printf("%d ", i+1);
+//     }
+// }
+// int s = 0;
+// for(int i = 0; i < 10; i++) {
+//     if(i%3) s += i;
+//     else i += 3;
+// }
+// printf("%d\n", s);
+// char s[10] = "hello";
+// s = "hello";
+// le   THI   cAm   lY   => Le Thi Cam Ly
 
-    // char s[10] = "Hello :))";
-    // // char s[10];
-    // int len = strlen(s);
-    // printf("%d", len);
-    // printf("%d\n", strcmp("BYTE", "byte"));
-    // printf("%d\n", strcmp("byte", "byte"));
-    // printf("%d\n", strcmp("byte", "BYTE"));
-    // int a = 0b111, b = 2;
-    // a = (--b>a) ? b++:++b;
-    // int a = 7+5&&3<=1+3-2.0/3&&5<2+1;
-    // a = 7+1<=3<2+1;
-    // // a = 2.0/3&&5;
-    // a = 1+2 < 2+3 && 1;
-    // printf("%d", a);
-    // int a, b, c
-    // // a = 12;
-    // // b = 234;
-    // printf("Nhap a va b: ");
-    // scanf("%d%d", &a, &b);
-    // c = a + b;
-    // printf("Tong cua a va b la: %d", c);
-    // float x, y;
-    // x = 1.234;
-    // printf("%f\n", x);
-    // printf("Hello");
-    // return 1;
+// char s[10] = "Hello :))";
+// // char s[10];
+// int len = strlen(s);
+// printf("%d", len);
+// printf("%d\n", strcmp("BYTE", "byte"));
+// printf("%d\n", strcmp("byte", "byte"));
+// printf("%d\n", strcmp("byte", "BYTE"));
+// int a = 0b111, b = 2;
+// a = (--b>a) ? b++:++b;
+// int a = 7+5&&3<=1+3-2.0/3&&5<2+1;
+// a = 7+1<=3<2+1;
+// // a = 2.0/3&&5;
+// a = 1+2 < 2+3 && 1;
+// printf("%d", a);
+// int a, b, c
+// // a = 12;
+// // b = 234;
+// printf("Nhap a va b: ");
+// scanf("%d%d", &a, &b);
+// c = a + b;
+// printf("Tong cua a va b la: %d", c);
+// float x, y;
+// x = 1.234;
+// printf("%f\n", x);
+// printf("Hello");
+// return 1;
 // }
 
 /* -7 -6 -5 .. -1 0 1 2 .. 6
